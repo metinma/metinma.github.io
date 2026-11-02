@@ -52,8 +52,9 @@ header, main, footer {
 /* --- Header & Navigation --- */
 header {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   gap: 10px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--border-color);
@@ -115,7 +116,7 @@ a {
 .profile-img {
   width: 130px;
   height: 130px;
-  border-radius: 50%;
+  border-radius: 5%;
   object-fit: cover;
   /* Fluid scaling rule for images */
   max-width: 100%;
@@ -148,10 +149,10 @@ footer {
 
   /* Align profile picture and bio side-by-side */
   .profile {
-    flex-direction: row;
+    flex-direction: column;
     text-align: left;
-    align-items: flex-start;
-    gap: 25px;
+    align-items: center;
+    gap: 15px;
   }
 
   .profile-img {
