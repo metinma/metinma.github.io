@@ -170,6 +170,7 @@ p, li {
   font-size: 0.95rem;
   margin: 0 0 0.5rem 0;
   line-height: 1.7;
+  text-align: justify;
 }
 
 .cert-list {
