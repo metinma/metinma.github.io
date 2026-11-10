@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Mehmet Ali Metin</title>
-  <link rel="icon" type="image/svg+xml" href="../icon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to My New Website · Mehmet Ali Metin</title>
+  <meta name="description" content="Why I built this simple website and what to expect here.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10141b" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  
-  <nav aria-label="Main Navigation">
-    <ul>
-      <li><a href="../index.html">About</a></li>
-      <li><a href="index.html" aria-current="page">Blog</a></li>
-    </ul>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main class="a4-document">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">Mehmet Ali Metin</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../">CV</a></li>
+          <li><a href="./" aria-current="page">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
     <article>
-      <!-- Utilizing the existing CSS classes from the main page to create a unified header style -->
-      <header class="profile-header">
-        <div class="profile-info">
-          <h1>Welcome to My New Website</h1>
-          <!-- Using the address tag to inherit the muted text color from the CSS -->
-          <address>October 15, 2026</address> 
-        </div>
+      <header class="post-header">
+        <h1>Welcome to My New Website</h1>
+        <p class="meta"><time datetime="2026-10-15">October 15, 2026</time></p>
       </header>
 
-      <div class="article-body">
+      <div class="prose">
         <p>This is my first post on my new personal website. I decided to build a minimal site hosted on GitHub Pages to share occasional notes on my work, personal projects, and technical thoughts.</p>
 
         <p>I wanted something lightweight, fast, and completely free of unnecessary bloat. Plain HTML and CSS keep maintenance effortless and ensure the site loads instantly on any device.</p>
 
-        <!-- Changed to h2 to utilize the uppercase, bordered section header styling -->
         <h2>What to Expect Next</h2>
         <p>I plan to write whenever I run into an interesting problem or wrap up a new project. Stay tuned!</p>
       </div>
     </article>
 
-    <nav class="back-link" aria-label="Post navigation" style="margin-top: 3rem;">
-      <p><a href="index.html">&larr; Back to all posts</a></p>
-    </nav>
+    <a class="back-link" href="./">← All posts</a>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Mehmet Ali Metin</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Mehmet Ali Metin</p>
+      <p><a href="mailto:mehmetalimetin@yahoo.com">Get in touch</a></p>
+    </div>
   </footer>
-
 </body>
 </html>

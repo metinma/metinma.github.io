@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Mehmet Ali Metin</title>
-  <link rel="icon" type="image/svg+xml" href="../icon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog · Mehmet Ali Metin</title>
+  <meta name="description" content="Occasional thoughts, notes on my work, and technical write-ups.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10141b" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  
-  <nav aria-label="Main Navigation">
-    <ul>
-      <li><a href="../index.html">About</a></li>
-      <li><a href="index.html" aria-current="page">Blog</a></li>
-    </ul>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main class="a4-document">
-    <section>
-      <h2>Blog Posts</h2>
-      <p>A collection of occasional thoughts, notes on my work, and technical write-ups.</p>
-    </section>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">Mehmet Ali Metin</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../">CV</a></li>
+          <li><a href="./" aria-current="page">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <section class="post-list">
-      <article class="post-item">
-        <header>
-          <h3><a href="first-blog.html">Welcome to My New Website</a></h3>
-          <small>October 15, 2026</small>
-        </header>
-        <p>A short note on why I built this simple website, my choice of static hosting, and what to expect here in the future.</p>
-      </article>
-    </section>
+  <main id="main" class="wrap">
+    <header class="page-intro">
+      <h1>Blog</h1>
+      <p>Occasional thoughts, notes on my work, and technical write-ups.</p>
+    </header>
+
+    <!-- Newest post first. Copy an <li> block to add a new post. -->
+    <ol class="post-list" reversed>
+      <li>
+        <a class="post-card" href="first-blog.html">
+          <h2>Welcome to My New Website</h2>
+          <time datetime="2026-10-15">October 15, 2026</time>
+          <p>A short note on why I built this simple website, my choice of static hosting, and what to expect here in the future.</p>
+        </a>
+      </li>
+    </ol>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Mehmet Ali Metin</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Mehmet Ali Metin</p>
+      <p><a href="mailto:mehmetalimetin@yahoo.com">Get in touch</a></p>
+    </div>
   </footer>
-
 </body>
 </html>
