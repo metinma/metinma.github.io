@@ -20,8 +20,7 @@ _tools/                helper scripts (not published)
 Elements with `class="todo"` in `index.html` show a dashed gold outline on the
 page. Replace their text with your information, then remove the `todo` class.
 Search the file for `todo`. They are: photo, LinkedIn and GitHub links,
-summary, degree dates, research dates, tracer project context, languages,
-and the CS50P date.
+summary, degree dates, research dates, tracer project context and languages.
 
 ## Updating the PDF CV
 
