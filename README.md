@@ -11,24 +11,20 @@ blog/feed.xml          RSS feed
 blog/_template.html    starting point for a new post (not published)
 style.css              all styling, incl. light/dark palette
 assets/icon.svg        favicon
-assets/cv.pdf          downloadable CV (generated from index.html)
-_tools/                helper scripts (not published)
 ```
 
 ## Placeholders still to fill in
 
-Elements with `class="todo"` in `index.html` show a dashed gold outline on the
-page. Replace their text with your information, then remove the `todo` class.
-Search the file for `todo`. They are: photo, LinkedIn and GitHub links,
-summary, degree dates, research dates, tracer project context and languages.
+Elements with `class="todo"` in `index.html` still hold placeholder text. The
+class has no visual effect; it only marks what is left. Replace the text with
+your information, then remove the `todo` class. Search the file for `todo`.
+They are: photo, summary, degree dates, research dates, tracer project context
+and languages.
 
-## Updating the PDF CV
+## PDF version of the CV
 
-After changing `index.html`, regenerate `assets/cv.pdf`, either:
-
-- **In a browser:** open the CV page, Print → Save as PDF (A4), and save it
-  over `assets/cv.pdf`. The print styles hide the menu and footer.
-- **With the script:** `node _tools/make-cv-pdf.js` (needs Node.js and Playwright).
+Open the CV page and use the browser's Print → Save as PDF. The print styles
+hide the menu and footer and switch to black and white.
 
 ## Writing a new post
 

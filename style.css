@@ -338,12 +338,6 @@ main { flex: 1; padding-block: 1rem 3rem; }
 .skills dt { font-weight: 600; }
 .skills dd { margin: 0; color: var(--muted); }
 
-/* Placeholders still waiting for real content. Delete the class when filled. */
-.todo {
-  outline: 2px dashed var(--sun);
-  outline-offset: 3px;
-}
-
 /* ---------- Blog: index ---------- */
 
 .page-intro { padding-block: 2.5rem 0.5rem; }
@@ -491,7 +485,7 @@ main { flex: 1; padding-block: 1rem 3rem; }
     --line: #ccc; --accent: #000; --accent-bg: #fff; --sun: #888;
   }
   body { font-size: 10.5pt; }
-  .site-header, .site-footer, .skip-link, .no-print { display: none; }
+  .site-header, .site-footer, .skip-link { display: none; }
   .avatar-initials { background: #fff; color: #000; border: 1px solid #000; }
   .wrap { max-width: none; padding: 0; }
   main { padding: 0; }
