@@ -5,10 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mehmet Ali Metin</title>
   <meta name="description" content="Mehmet Ali Metin — Petroleum and Natural Gas Engineering, METU. CV and blog.">
+  <link rel="canonical" href="https://metinma.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Mehmet Ali Metin">
+  <meta property="og:description" content="Petroleum and Natural Gas Engineering, METU. CV and blog.">
+  <meta property="og:url" content="https://metinma.github.io/">
+  <meta property="og:site_name" content="Mehmet Ali Metin">
+  <meta name="twitter:card" content="summary">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#10141b" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="alternate" type="application/rss+xml" title="Mehmet Ali Metin — Blog" href="blog/feed.xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,18 +34,32 @@
     </div>
   </header>
 
+  <!--
+    PLACEHOLDERS: every element with class="todo" (highlighted with a dashed
+    gold outline on the page) still needs your information. Fill it in, then
+    delete the word "todo" from its class. Search this file for "todo".
+  -->
+
   <main id="main" class="wrap">
 
     <section class="profile" aria-label="Profile">
-      <img src="assets/avatar.jpg" alt="" width="104" height="104">
+      <!-- TODO (photo): put a square headshot at assets/headshot.jpg, then
+           replace the <div class="avatar ..."> below with:
+           <img class="avatar" src="assets/headshot.jpg" alt="" width="104" height="104"> -->
+      <div class="avatar avatar-initials todo" aria-hidden="true">MM</div>
       <div>
         <h1>Mehmet Ali Metin</h1>
         <p class="role">Petroleum and Natural Gas Engineering · METU, Ankara</p>
         <ul class="contact">
           <li><a href="mailto:mehmetalimetin@yahoo.com">mehmetalimetin@yahoo.com</a></li>
+          <li class="todo"><a href="https://www.linkedin.com/in/YOUR-PROFILE/">LinkedIn</a></li>
+          <li class="todo"><a href="https://github.com/YOUR-USERNAME">GitHub</a></li>
+          <li class="no-print"><a href="assets/cv.pdf" download>Download CV (PDF)</a></li>
         </ul>
       </div>
     </section>
+
+    <p class="summary todo">One or two sentences: what you do and what you are looking for — e.g. “Petroleum engineering student focused on reservoir simulation and underground hydrogen storage, seeking a graduate role in reservoir or drilling engineering from 2027.”</p>
 
     <section class="cv-section" id="education">
       <h2>Education</h2>
@@ -45,6 +67,7 @@
         <li class="entry">
           <div class="entry-head">
             <h3>B.Sc. in Petroleum and Natural Gas Engineering</h3>
+            <span class="meta todo">20XX – 20XX (expected)</span>
           </div>
           <p class="org">Middle East Technical University (METU) · Ankara, Türkiye</p>
           <p>Coursework in Reservoir Engineering, Geology, Chemical Engineering, Fluid Transport, and Numerical Methods.</p>
@@ -80,6 +103,7 @@
         <li class="entry">
           <div class="entry-head">
             <h3>Underground Hydrogen Storage (UHS) Researcher</h3>
+            <span class="meta todo">Month 20XX – Present</span>
           </div>
           <p class="org">Middle East Technical University (METU)</p>
           <p>Researcher for the project <em>“Autonomous Discovery of Geochemical Reactions Occurring in Reservoirs During the Underground Hydrogen Storage by a Neural Network”</em>. Developing physics-informed neural network (PINN) architectures to accelerate PHREEQC-based 1D advective–reactive transport modeling of geochemical and microbial kinetics.</p>
@@ -87,11 +111,35 @@
         <li class="entry">
           <div class="entry-head">
             <h3>Analytical Tracer Breakthrough Modeling</h3>
+            <span class="meta todo">Month 20XX</span>
           </div>
-          <p class="org">Porous &amp; Fractured Media</p>
-          <p>Implemented Sauty’s 1D advection–dispersion model and fracture flow equations in modular Python scripts.</p>
+          <p class="org todo">Context — e.g. “Personal project” or “Course project, PETE XXX”</p>
+          <p>Implemented Sauty’s 1D advection–dispersion model and fracture flow equations for porous and fractured media in modular Python scripts.</p>
         </li>
       </ol>
+    </section>
+
+    <section class="cv-section" id="skills">
+      <h2>Skills</h2>
+      <!-- Pre-filled from the rest of this CV. Check, add, remove. -->
+      <dl class="skills">
+        <div>
+          <dt>Programming &amp; modeling</dt>
+          <dd>Python, PHREEQC, physics-informed neural networks (PINNs), numerical methods</dd>
+        </div>
+        <div>
+          <dt>Engineering software</dt>
+          <dd>Landmark CasingSeat™, StressCheck™, WellPlan™</dd>
+        </div>
+        <div>
+          <dt>Field</dt>
+          <dd>BHA design, MWD/LWD tools, drilling fluid testing, well control (IWCF Level 1), production operations</dd>
+        </div>
+        <div class="todo">
+          <dt>Languages</dt>
+          <dd>Turkish (native), English (level)</dd>
+        </div>
+      </dl>
     </section>
 
     <section class="cv-section" id="certifications">
@@ -115,6 +163,7 @@
         </li>
         <li>
           <span>CS50’s Introduction to Programming with Python <span class="sub">HarvardX</span></span>
+          <span class="meta todo">Month 20XX</span>
         </li>
       </ul>
     </section>

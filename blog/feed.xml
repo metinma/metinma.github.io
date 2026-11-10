@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  RSS feed for the blog. When you publish a post, copy an <item> block,
+  put it at the top, and fill in title, link, guid, pubDate and description.
+  pubDate format: "Thu, 15 Oct 2026 00:00:00 +0300"
+-->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mehmet Ali Metin — Blog</title>
+    <link>https://metinma.github.io/blog/</link>
+    <atom:link href="https://metinma.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Occasional thoughts, notes on my work, and technical write-ups.</description>
+    <language>en</language>
+
+    <item>
+      <title>Welcome to My New Website</title>
+      <link>https://metinma.github.io/blog/first-blog.html</link>
+      <guid>https://metinma.github.io/blog/first-blog.html</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0300</pubDate>
+      <description>A short note on why I built this simple website, my choice of static hosting, and what to expect here in the future.</description>
+    </item>
+
+  </channel>
+</rss>
