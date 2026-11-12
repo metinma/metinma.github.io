@@ -457,7 +457,7 @@ main { flex: 1; padding-block: 0 4rem; }
 
 /* ---------- Print (About page as PDF): one A4 page, two columns ---------- */
 
-@page { size: A4; margin: 12mm 13mm; }
+@page { size: A4; margin: 10mm 12mm; }
 
 @media print {
   :root {
@@ -465,15 +465,13 @@ main { flex: 1; padding-block: 0 4rem; }
     --line: #c4c4c4; --accent: #000; --accent-ink: #000; --accent-soft: #fff;
   }
   html { font-size: 9.2pt; }
-  body { font-size: 1rem; line-height: 1.42; min-height: 0; display: block; }
-  .site-header, .site-footer, .skip-link { display: none; }
+  body { font-size: 1rem; line-height: 1.36; min-height: 0; display: block; }
+  .site-header, .site-footer, .skip-link, .avatar, .no-print { display: none; }
   .wrap, .page-cv .wrap { max-width: none; padding: 0; }
   main { padding: 0; }
   a { text-decoration: none; }
 
   .profile { padding: 0; gap: 1.1rem; flex-direction: row; align-items: center; }
-  .avatar { width: 60px; height: 60px; border-color: #000; }
-  .avatar-initials { font-size: 1.4rem; color: #000; }
   .profile h1 { font-size: 2rem; }
   .profile .role { margin-top: 0.1rem; }
   .contact { margin-top: 0.2rem; }
@@ -481,13 +479,13 @@ main { flex: 1; padding-block: 0 4rem; }
 
   .cv-body {
     display: grid;
-    grid-template-columns: 30% minmax(0, 1fr);
-    gap: 0 1.8rem;
+    grid-template-columns: 37% minmax(0, 1fr);
+    gap: 0 1.6rem;
     align-items: start;
   }
   .cv-main, .cv-side { display: block; }
 
-  .cv-section { margin-top: 1.1rem; }
+  .cv-section { margin-top: 0.9rem; }
   .cv-section > h2 { margin-bottom: 0.55rem; font-size: 0.8rem; color: #000; break-after: avoid; }
   .entry { break-inside: avoid; }
   .entry + .entry { margin-top: 0.75rem; }

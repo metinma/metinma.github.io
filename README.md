@@ -4,6 +4,7 @@ Personal website: CV and blog. Plain HTML and CSS, no build step, served by GitH
 
 ```
 index.html             About page, laid out as a CV (home page)
+cv.pdf                 one-page PDF of the About page (generated from index.html)
 404.html               shown by GitHub Pages for any missing page
 blog/index.html        list of posts
 blog/*.html            one file per post
@@ -18,13 +19,21 @@ assets/icon.svg        favicon
 Elements with `class="todo"` in `index.html` still hold placeholder text. The
 class has no visual effect; it only marks what is left. Replace the text with
 your information, then remove the `todo` class. Search the file for `todo`.
-They are: photo, summary, degree dates, research dates, tracer project context,
-languages and hobbies.
+They are: photo, B.Sc. dates, UHS research dates and languages.
 
 ## PDF version of the CV
 
-Open the About page and use the browser's Print → Save as PDF. The print styles
-hide the menu and footer and switch to black and white.
+`cv.pdf` is printed from `index.html` using the page's print styles, which hide
+the menu, logo, download link and footer and lay the CV out on one A4 page.
+Whenever the About page changes, regenerate it from the repository root:
+
+```bash
+chromium --headless --no-pdf-header-footer --print-to-pdf=cv.pdf index.html
+```
+
+Then check it is still exactly one page (`pdfinfo cv.pdf`). If it spills onto a
+second page, tighten the spacing in the `@media print` block of `style.css`;
+keep body text at 9 pt or larger.
 
 ## Writing a new post
 
