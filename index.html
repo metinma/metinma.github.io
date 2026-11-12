@@ -19,7 +19,7 @@
   <link rel="alternate" type="application/rss+xml" title="Mehmet Ali Metin — Blog" href="blog/feed.xml">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-cv">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -59,112 +59,120 @@
 
     <p class="summary todo">One or two sentences: what you do and what you are looking for — e.g. “Petroleum engineering student focused on reservoir simulation and underground hydrogen storage, seeking a graduate role in reservoir or drilling engineering from 2027.”</p>
 
-    <section class="cv-section" id="education">
-      <h2>Education</h2>
-      <ol class="entries">
-        <li class="entry">
-          <div class="entry-head">
-            <h3>B.Sc. in Petroleum and Natural Gas Engineering</h3>
-            <span class="meta todo">2019 – 2026</span>
-          </div>
-          <p class="org">Middle East Technical University (METU) · Ankara, Türkiye</p>
-          <p>Coursework in Reservoir Engineering, Geology, Chemical Engineering, Fluid Transport, and Numerical Methods.</p>
-        </li>
-      </ol>
-    </section>
+    <div class="cv-body">
+      <div class="cv-main">
 
-    <section class="cv-section" id="experience">
-      <h2>Experience</h2>
-      <ol class="entries">
-        <li class="entry">
-          <div class="entry-head">
-            <h3>Directional Drilling Summer Intern</h3>
-            <span class="meta">August 2025</span>
-          </div>
-          <p class="org">TP-OTC · Filyos Shorebase Logistics Center</p>
-          <p>Worked within the Directional Drilling and Measurement department supporting the Sakarya Gas Field project. Gained practical experience in bottom hole assembly (BHA) design, tested MWD/LWD directional drilling tools, and evaluated drilling fluid properties.</p>
-        </li>
-        <li class="entry">
-          <div class="entry-head">
-            <h3>Production Department Summer Intern</h3>
-            <span class="meta">August 2024</span>
-          </div>
-          <p class="org">TPAO · Trakya Region</p>
-          <p>Hands-on experience in production engineering across the process and reservoir teams: routine well maintenance, perforation jobs, surface equipment monitoring, and fluid sampling — bridging academic coursework with real-world petroleum operations.</p>
-        </li>
-      </ol>
-    </section>
+        <section class="cv-section" id="experience">
+          <h2>Experience</h2>
+          <ol class="entries">
+            <li class="entry">
+              <div class="entry-head">
+                <h3>Directional Drilling Summer Intern</h3>
+                <span class="meta">August 2025</span>
+              </div>
+              <p class="org">TP-OTC · Filyos Shorebase Logistics Center</p>
+              <p>Worked within the Directional Drilling and Measurement department supporting the Sakarya Gas Field project. Gained practical experience in bottom hole assembly (BHA) design, tested MWD/LWD directional drilling tools, and evaluated drilling fluid properties.</p>
+            </li>
+            <li class="entry">
+              <div class="entry-head">
+                <h3>Production Department Summer Intern</h3>
+                <span class="meta">August 2024</span>
+              </div>
+              <p class="org">TPAO · Trakya Region</p>
+              <p>Hands-on experience in production engineering across the process and reservoir teams: routine well maintenance, perforation jobs, surface equipment monitoring, and fluid sampling — bridging academic coursework with real-world petroleum operations.</p>
+            </li>
+          </ol>
+        </section>
 
-    <section class="cv-section" id="research">
-      <h2>Research &amp; Projects</h2>
-      <ol class="entries">
-        <li class="entry">
-          <div class="entry-head">
-            <h3>Underground Hydrogen Storage (UHS) Researcher</h3>
-            <span class="meta todo">November 2025 – Present</span>
-          </div>
-          <p class="org">Middle East Technical University (METU)</p>
-          <p>Researcher for the project <em>“Autonomous Discovery of Geochemical Reactions Occurring in Reservoirs During the Underground Hydrogen Storage by a Neural Network”</em>. Developing physics-informed neural network (PINN) architectures to accelerate PHREEQC-based 1D advective–reactive transport modeling of geochemical and microbial kinetics.</p>
-        </li>
-        <li class="entry">
-          <div class="entry-head">
-            <h3>Analytical Tracer Breakthrough Modeling</h3>
-            <span class="meta todo">Month 20XX</span>
-          </div>
-          <p class="org todo">Context — e.g. “Personal project” or “Course project, PETE XXX”</p>
-          <p>Implemented Sauty’s 1D advection–dispersion model and fracture flow equations for porous and fractured media in modular Python scripts.</p>
-        </li>
-      </ol>
-    </section>
+        <section class="cv-section" id="research">
+          <h2>Research &amp; Projects</h2>
+          <ol class="entries">
+            <li class="entry">
+              <div class="entry-head">
+                <h3>Underground Hydrogen Storage (UHS) Researcher</h3>
+                <span class="meta todo">November 2025 – Present</span>
+              </div>
+              <p class="org">Middle East Technical University (METU)</p>
+              <p>Researcher for the project <em>“Autonomous Discovery of Geochemical Reactions Occurring in Reservoirs During the Underground Hydrogen Storage by a Neural Network”</em>. Developing physics-informed neural network (PINN) architectures to accelerate PHREEQC-based 1D advective–reactive transport modeling of geochemical and microbial kinetics.</p>
+            </li>
+            <li class="entry">
+              <div class="entry-head">
+                <h3>Analytical Tracer Breakthrough Modeling</h3>
+                <span class="meta todo">Month 20XX</span>
+              </div>
+              <p class="org todo">Context — e.g. “Personal project” or “Course project, PETE XXX”</p>
+              <p>Implemented Sauty’s 1D advection–dispersion model and fracture flow equations for porous and fractured media in modular Python scripts.</p>
+            </li>
+          </ol>
+        </section>
 
-    <section class="cv-section" id="skills">
-      <h2>Skills</h2>
-      <!-- Pre-filled from the rest of this CV. Check, add, remove. -->
-      <dl class="skills">
-        <div>
-          <dt>Programming &amp; modeling</dt>
-          <dd>Python, PHREEQC, physics-informed neural networks (PINNs), numerical methods</dd>
-        </div>
-        <div>
-          <dt>Engineering software</dt>
-          <dd>Landmark CasingSeat™, StressCheck™, WellPlan™</dd>
-        </div>
-        <div>
-          <dt>Field</dt>
-          <dd>BHA design, MWD/LWD tools, drilling fluid testing, well control (IWCF Level 1), production operations</dd>
-        </div>
-        <div class="todo">
-          <dt>Languages</dt>
-          <dd>Turkish (native), English (advanced)</dd>
-        </div>
-      </dl>
-    </section>
+        <section class="cv-section" id="skills">
+          <h2>Skills</h2>
+          <!-- Pre-filled from the rest of this CV. Check, add, remove. -->
+          <dl class="skills">
+            <div>
+              <dt>Programming &amp; modeling</dt>
+              <dd>Python, PHREEQC, physics-informed neural networks (PINNs), numerical methods</dd>
+            </div>
+            <div>
+              <dt>Engineering software</dt>
+              <dd>Landmark CasingSeat™, StressCheck™, WellPlan™</dd>
+            </div>
+            <div>
+              <dt>Field</dt>
+              <dd>BHA design, MWD/LWD tools, drilling fluid testing, well control (IWCF Level 1), production operations</dd>
+            </div>
+            <div class="todo">
+              <dt>Languages</dt>
+              <dd>Turkish (native), English (advanced)</dd>
+            </div>
+          </dl>
+        </section>
+      </div>
 
-    <section class="cv-section" id="certifications">
-      <h2>Certifications &amp; Training</h2>
-      <ul class="plain-list">
-        <li>
-          <span>Introduction to CasingSeat™, StressCheck™, WellPlan™ <span class="sub">Halliburton</span></span>
-          <span class="meta">March 2026</span>
-        </li>
-        <li>
-          <span>Reservoir Modelling Workflows <span class="sub">Dr. Arman Darvish Sarvestani</span></span>
-          <span class="meta">March 2026</span>
-        </li>
-        <li>
-          <span>Level 1 Programme <span class="sub">International Well Control Forum (IWCF)</span></span>
-          <span class="meta">May 2025</span>
-        </li>
-        <li>
-          <span>Advanced Stimulation Practices Seminar <span class="sub">Production Solutions</span></span>
-          <span class="meta">March 2024</span>
-        </li>
-        <li>
-          <span>CS50’s Introduction to Programming with Python <span class="sub">HarvardX</span></span>
-          <span class="meta">In Progress</span>
-        </li>
-      </ul>
-    </section>
+      <aside class="cv-side" aria-label="Education and certifications">
+
+        <section class="cv-section" id="education">
+          <h2>Education</h2>
+          <ol class="entries">
+            <li class="entry">
+              <div class="entry-head">
+                <h3>B.Sc. in Petroleum and Natural Gas Engineering</h3>
+                <span class="meta todo">2019 – 2026</span>
+              </div>
+              <p class="org">Middle East Technical University (METU) · Ankara, Türkiye</p>
+              <p>Coursework in Reservoir Engineering, Geology, Chemical Engineering, Fluid Transport, and Numerical Methods.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="cv-section" id="certifications">
+          <h2>Certifications &amp; Training</h2>
+          <ul class="plain-list">
+            <li>
+              <span>Introduction to CasingSeat™, StressCheck™, WellPlan™ <span class="sub">Halliburton</span></span>
+              <span class="meta">March 2026</span>
+            </li>
+            <li>
+              <span>Reservoir Modelling Workflows <span class="sub">Dr. Arman Darvish Sarvestani</span></span>
+              <span class="meta">March 2026</span>
+            </li>
+            <li>
+              <span>Level 1 Programme <span class="sub">International Well Control Forum (IWCF)</span></span>
+              <span class="meta">May 2025</span>
+            </li>
+            <li>
+              <span>Advanced Stimulation Practices Seminar <span class="sub">Production Solutions</span></span>
+              <span class="meta">March 2024</span>
+            </li>
+            <li>
+              <span>CS50’s Introduction to Programming with Python <span class="sub">HarvardX</span></span>
+              <span class="meta">In Progress</span>
+            </li>
+          </ul>
+        </section>
+      </aside>
+    </div>
 
   </main>
 
