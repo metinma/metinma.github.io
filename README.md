@@ -3,7 +3,7 @@
 Personal website: CV and blog. Plain HTML and CSS, no build step, served by GitHub Pages.
 
 ```
-index.html             CV (home page)
+index.html             About page, laid out as a CV (home page)
 404.html               shown by GitHub Pages for any missing page
 blog/index.html        list of posts
 blog/*.html            one file per post
@@ -23,7 +23,7 @@ and languages.
 
 ## PDF version of the CV
 
-Open the CV page and use the browser's Print → Save as PDF. The print styles
+Open the About page and use the browser's Print → Save as PDF. The print styles
 hide the menu and footer and switch to black and white.
 
 ## Writing a new post
