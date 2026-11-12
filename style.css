@@ -305,24 +305,10 @@ main { flex: 1; padding-block: 1rem 3rem; }
 
 .entry p { margin: 0.4rem 0 0; }
 
-/* Certifications */
-.plain-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.plain-list li {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0 1rem;
-  padding-block: 0.7rem;
-  border-bottom: 1px solid var(--line);
-}
-.plain-list li:first-child { padding-top: 0; }
-.plain-list li:last-child { border-bottom: 0; }
-.plain-list .meta { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
-.plain-list .sub  { display: block; color: var(--muted); font-size: 0.9rem; }
+/* Compact timeline entries (certifications): title, issuer, date only */
+.entries-compact .entry { margin-bottom: 1rem; }
+.entries-compact .entry h3 { font-size: 1rem; font-weight: 600; }
+.entries-compact .entry .org { margin-bottom: 0; }
 
 /* Skills */
 .skills { margin: 0; }
@@ -340,38 +326,44 @@ main { flex: 1; padding-block: 1rem 3rem; }
 
 /* ---------- CV: two-column layout ----------
    Phones and narrow windows: one column, sections in reading order
-   (Education, Experience, Research, Skills, Certifications).
-   Wide screens and print: main column (Experience, Research, Skills) beside
-   a sidebar (Education, Certifications). */
+   (Education, Experience, Research, Certifications, Skills).
+   Wide screens and print: a static sidebar on the left (Education, Skills)
+   beside the main timeline (Experience, Research, Certifications). */
 
 .cv-body { display: flex; flex-direction: column; }
 .cv-main, .cv-side { display: contents; }
 #education      { order: 1; }
 #experience     { order: 2; }
 #research       { order: 3; }
-#skills         { order: 4; }
-#certifications { order: 5; }
-
-/* Sidebar content stacks instead of sitting side by side */
-.cv-side .plain-list li { flex-direction: column; }
-.cv-side .plain-list li { font-size: 0.95rem; }
-.cv-side .entry .meta { white-space: normal; }
+#certifications { order: 4; }
+#skills         { order: 5; }
 
 @media (min-width: 960px) {
   .page-cv .wrap { max-width: 72rem; }
   .cv-body {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 20rem;
+    grid-template-columns: 19rem minmax(0, 1fr);
     gap: 0 3.5rem;
     align-items: start;
   }
   .cv-main, .cv-side { display: block; }
   .cv-side {
-    border-left: 1px solid var(--line);
-    padding-left: 2rem;
-    margin-left: -1.5rem;
+    border-right: 1px solid var(--line);
+    padding-right: 2rem;
+    margin-right: -1.5rem;
   }
   .summary { max-width: 46rem; }
+}
+
+/* Sidebar (wide screens and print): static blocks, no timeline */
+@media (min-width: 960px), print {
+  .cv-side .entries { border-left: 0; padding-left: 0; }
+  .cv-side .entry::before { display: none; }
+  .cv-side .entry .meta { white-space: normal; }
+  .cv-side .entry-head { flex-direction: column; gap: 0; }
+  .cv-side .entry p:not(.org) { font-size: 0.95rem; color: var(--muted); }
+  .cv-side .skills > div { grid-template-columns: 1fr; gap: 0.1rem; }
+  .cv-side .skills dt, .cv-side .skills dd { font-size: 0.95rem; }
 }
 
 /* ---------- Blog: index ---------- */
@@ -486,8 +478,7 @@ main { flex: 1; padding-block: 1rem 3rem; }
   }
   .avatar { width: 88px; height: 88px; }
   .avatar-initials { font-size: 1.8rem; }
-  .entry .meta, .plain-list .meta { white-space: normal; }
-  .plain-list li { flex-direction: column; }
+  .entry .meta { white-space: normal; }
   .skills > div { grid-template-columns: 1fr; }
   .prose { font-size: 1.08rem; }
 }
@@ -518,7 +509,6 @@ main { flex: 1; padding-block: 1rem 3rem; }
 @page { size: A4; margin: 12mm 13mm; }
 
 @media print {
-  .skills > div { grid-template-columns: 11rem 1fr; }
   :root {
     --bg: #fff; --surface: #fff; --ink: #000; --muted: #333;
     --line: #bbb; --accent: #000; --accent-bg: #fff; --sun: #777;
@@ -539,22 +529,24 @@ main { flex: 1; padding-block: 1rem 3rem; }
 
   .cv-body {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 33%;
+    grid-template-columns: 30% minmax(0, 1fr);
     gap: 0 1.6rem;
     align-items: start;
   }
   .cv-main, .cv-side { display: block; }
-  .cv-side { border-left: 1px solid var(--line); padding-left: 1.1rem; margin-left: -0.5rem; }
+  .cv-side { border-right: 1px solid var(--line); padding-right: 1.1rem; margin-right: -0.5rem; }
 
   .cv-section { margin-top: 1rem; }
   .cv-section > h2 { margin-bottom: 0.55rem; font-size: 0.85rem; break-after: avoid; }
   .entries { padding-left: 0.9rem; }
   .entry { margin-bottom: 0.8rem; break-inside: avoid; }
-  .entry::before { left: calc(-0.9rem - 5px); top: 0.35rem; width: 8px; height: 8px; box-shadow: none; }
+  .entry::before { left: calc(-0.9rem - 5px); top: 0.35rem; width: 8px; height: 8px; box-shadow: none;
+                   -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .entry h3 { font-size: 1.05rem; }
   .entry .org { margin: 0 0 0.15rem; font-size: 0.95rem; }
   .entry p { margin-top: 0.15rem; }
-  .entry .meta, .plain-list .meta, .plain-list .sub { font-size: 0.9rem; }
+  .entry .meta { font-size: 0.9rem; }
+  .entries-compact .entry { margin-bottom: 0.5rem; }
 
-  .skills > div, .plain-list li { padding-block: 0.35rem; }
+  .skills > div { padding-block: 0.35rem; }
 }
