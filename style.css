@@ -229,7 +229,6 @@ main { flex: 1; padding-block: 1rem 3rem; }
 .summary {
   margin: 0.5rem 0 0;
   font-size: 1.1rem;
-  max-width: 38rem;
 }
 
 /* ---------- CV: sections ---------- */
@@ -352,7 +351,7 @@ main { flex: 1; padding-block: 1rem 3rem; }
     padding-right: 2rem;
     margin-right: -1.5rem;
   }
-  .summary { max-width: 46rem; }
+  .cv-body { margin-top: 1rem; }
 }
 
 /* Sidebar (wide screens and print): static blocks, no timeline */
