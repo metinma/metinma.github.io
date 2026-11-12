@@ -18,8 +18,8 @@ assets/icon.svg        favicon
 Elements with `class="todo"` in `index.html` still hold placeholder text. The
 class has no visual effect; it only marks what is left. Replace the text with
 your information, then remove the `todo` class. Search the file for `todo`.
-They are: photo, summary, degree dates, research dates, tracer project context
-and languages.
+They are: photo, summary, degree dates, research dates, tracer project context,
+languages and hobbies.
 
 ## PDF version of the CV
 

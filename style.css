@@ -290,8 +290,8 @@ main { flex: 1; padding-block: 0 4rem; }
 
 /* ---------- About page: two-column layout ----------
    Phones and narrow windows: one column, in reading order
-   (Education, Experience, Research, Certifications, Skills).
-   Wide screens and print: a sidebar on the left (Education, Skills)
+   (Education, Experience, Research, Certifications, Skills, Hobbies).
+   Wide screens and print: a sidebar on the left (Education, Skills, Hobbies)
    beside the main column (Experience, Research, Certifications). */
 
 .cv-body { display: flex; flex-direction: column; }
@@ -301,6 +301,7 @@ main { flex: 1; padding-block: 0 4rem; }
 #research       { order: 3; }
 #certifications { order: 4; }
 #skills         { order: 5; }
+#hobbies        { order: 6; }
 
 @media (min-width: 960px) {
   .page-cv .wrap { max-width: var(--measure-wide); }
