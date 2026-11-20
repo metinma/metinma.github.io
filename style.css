@@ -1,0 +1,497 @@
+/* ==========================================================================
+   Mehmet Ali Metin — personal site
+   One stylesheet for every page. Plain CSS, no build step.
+
+   Design: minimal. Cool neutral backgrounds, gray text, square corners.
+   Pastel orange is the only color and is used sparingly, as a highlight:
+   link underlines, the active menu item, hover and focus states.
+   Light and dark values follow the visitor's system setting.
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* Light: cold pastel white */
+  --bg:          #f3f5f8;
+  --surface:     #fafbfc;
+  --ink:         #1c2027;   /* main text */
+  --muted:       #586170;   /* secondary text */
+  --line:        #dce0e6;   /* borders, rules */
+  --accent:      #e48f55;   /* pastel orange: underlines, markers */
+  --accent-ink:  #a4511a;   /* orange dark enough for text on --bg */
+  --accent-soft: #fbe6d6;   /* orange tint: active/hover backgrounds */
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --measure: 44rem;         /* reading width (blog) */
+  --measure-wide: 72rem;    /* About page on wide screens */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark: cold pastel black */
+    --bg:          #171a20;
+    --surface:     #1d2128;
+    --ink:         #e3e6eb;
+    --muted:       #9aa2ae;
+    --line:        #2c313a;
+    --accent:      #f2b28a;
+    --accent-ink:  #f2b28a;
+    --accent-soft: #3a2c25;
+  }
+}
+
+/* ---------- Base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;          /* 17px */
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3 { line-height: 1.25; margin: 0; color: var(--ink); font-weight: 600; }
+p { margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+a:hover { color: var(--accent-ink); text-decoration-color: currentColor; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0.5rem;
+  z-index: 10;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.75rem;
+}
+.skip-link:focus { left: 0.5rem; }
+
+/* ---------- Layout ---------- */
+
+.wrap {
+  width: 100%;
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+main { flex: 1; padding-block: 0 4rem; }
+
+/* Header and footer keep the same width on every page, so the menu
+   doesn't move when switching between About and Blog. */
+.site-header .wrap,
+.site-footer .wrap { max-width: var(--measure-wide); }
+
+/* ---------- Site header / nav ---------- */
+
+.site-header { border-bottom: 1px solid var(--line); }
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.75rem;
+}
+
+.brand {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.brand:hover { color: var(--ink); }
+
+.site-nav ul {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.35rem 0.85rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.site-nav a:hover { color: var(--ink); border-color: var(--line); }
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  background: var(--accent-soft);
+  border-color: var(--accent-soft);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-block: 1.5rem;
+}
+
+/* ---------- About page: profile ---------- */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 3rem;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+/* Shown until a photo is added */
+.avatar-initials {
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.profile h1 {
+  font-size: clamp(1.75rem, 4.5vw, 2.25rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.profile .role { margin-top: 0.3rem; color: var(--muted); }
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.summary {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+/* ---------- About page: sections ---------- */
+
+.cv-section { margin-top: 3rem; }
+
+.cv-section > h2,
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.cv-section > h2::after,
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* Entries: title + date on one line, organisation, description */
+.entries { list-style: none; margin: 0; padding: 0; }
+
+.entry + .entry { margin-top: 1.75rem; }
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.1rem 1.5rem;
+}
+
+.entry h3 { font-size: 1.05rem; }
+
+.entry .meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.entry .org { margin-top: 0.15rem; color: var(--muted); font-size: 0.95rem; }
+
+.entry p:not(.org) { margin-top: 0.5rem; }
+
+/* Compact entries (certifications): title, issuer, date only */
+.entries-compact .entry + .entry { margin-top: 1rem; }
+.entries-compact .entry h3 { font-size: 1rem; font-weight: 500; }
+
+/* Skills */
+.skills { margin: 0; }
+.skills > div {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 0.2rem 1.5rem;
+}
+.skills > div + div { margin-top: 1rem; }
+.skills dt { font-weight: 600; }
+.skills dd { margin: 0; color: var(--muted); }
+
+/* ---------- About page: two-column layout ----------
+   Phones and narrow windows: one column, in reading order
+   (Education, Experience, Research, Certifications, Skills, Hobbies).
+   Wide screens and print: a sidebar on the left (Education, Skills, Hobbies)
+   beside the main column (Experience, Research, Certifications). */
+
+.cv-body { display: flex; flex-direction: column; }
+.cv-main, .cv-side { display: contents; }
+#education      { order: 1; }
+#experience     { order: 2; }
+#research       { order: 3; }
+#certifications { order: 4; }
+#skills         { order: 5; }
+#hobbies        { order: 6; }
+
+@media (min-width: 960px) {
+  .page-cv .wrap { max-width: var(--measure-wide); }
+  .cv-body {
+    display: grid;
+    grid-template-columns: 18rem minmax(0, 1fr);
+    gap: 0 4rem;
+    align-items: start;
+  }
+  .cv-main, .cv-side { display: block; }
+}
+
+/* Sidebar (wide screens and print): stacked, smaller blocks */
+@media (min-width: 960px), print {
+  .cv-side .entry-head { flex-direction: column; gap: 0; }
+  .cv-side .entry .meta { white-space: normal; }
+  .cv-side .entry p:not(.org) { color: var(--muted); font-size: 0.95rem; }
+  .cv-side .skills > div { grid-template-columns: 1fr; gap: 0.1rem; }
+  .cv-side .skills dt,
+  .cv-side .skills dd { font-size: 0.95rem; }
+}
+
+/* ---------- Blog: index ---------- */
+
+.page-intro { padding-top: 3rem; }
+.page-intro h1 {
+  font-size: clamp(1.75rem, 4.5vw, 2.25rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+.page-intro p { margin-top: 0.5rem; color: var(--muted); }
+.page-intro .feed-link { margin-top: 0.25rem; font-size: 0.9rem; }
+
+.post-list {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.post-card {
+  display: block;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+.post-card:hover { color: inherit; }
+.post-card h2 {
+  display: inline;
+  font-size: 1.15rem;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 0.15s ease;
+}
+.post-card:hover h2 { text-decoration-color: var(--accent); }
+.post-card time { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.875rem; }
+.post-card p { margin-top: 0.5rem; color: var(--muted); }
+
+/* ---------- Blog: post ---------- */
+
+.post-header { padding-top: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.post-header h1 {
+  font-size: clamp(1.75rem, 5vw, 2.4rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+.post-header .meta { margin-top: 0.6rem; color: var(--muted); font-size: 0.95rem; }
+
+.prose {
+  padding-top: 1.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+.prose > * { margin-block: 0; }
+.prose > * + * { margin-top: 1.1em; }
+.prose h2, .prose h3 { font-family: var(--font-sans); margin-top: 2em; }
+.prose h2 { font-size: 1.35rem; }
+.prose h3 { font-size: 1.1rem; }
+.prose li + li { margin-top: 0.35em; }
+.prose blockquote {
+  margin-inline: 0;
+  padding-left: 1.1em;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  font-style: italic;
+}
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.3em;
+}
+.prose pre {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  overflow-x: auto;
+}
+.prose pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+.prose figure { margin-inline: 0; }
+.prose figcaption { margin-top: 0.4rem; color: var(--muted); font-family: var(--font-sans); font-size: 0.9rem; }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin-block: 2em; }
+
+.back-link {
+  display: inline-block;
+  margin-top: 3rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- 404 ---------- */
+
+.not-found { padding-top: 4rem; }
+.not-found .code {
+  margin-bottom: 0.5rem;
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+.not-found h1 { font-size: clamp(1.75rem, 4.5vw, 2.25rem); font-weight: 650; letter-spacing: -0.02em; }
+.not-found p:not(.code) { margin-top: 0.75rem; color: var(--muted); }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 560px) {
+  body { font-size: 1rem; }
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+  .avatar { width: 80px; height: 80px; }
+  .avatar-initials { font-size: 1.5rem; }
+  .entry .meta { white-space: normal; }
+  .skills > div { grid-template-columns: 1fr; gap: 0.1rem; }
+  .prose { font-size: 1.08rem; }
+}
+
+/* ---------- Motion preference ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* ---------- Print (About page as PDF): one A4 page, two columns ---------- */
+
+@page { size: A4; margin: 10mm 12mm; }
+
+@media print {
+  :root {
+    --bg: #fff; --surface: #fff; --ink: #000; --muted: #3a3a3a;
+    --line: #c4c4c4; --accent: #000; --accent-ink: #000; --accent-soft: #fff;
+  }
+  html { font-size: 9.2pt; }
+  body { font-size: 1rem; line-height: 1.36; min-height: 0; display: block; }
+  .site-header, .site-footer, .skip-link, .avatar, .no-print { display: none; }
+  .wrap, .page-cv .wrap { max-width: none; padding: 0; }
+  main { padding: 0; }
+  a { text-decoration: none; }
+
+  .profile { padding: 0; gap: 1.1rem; flex-direction: row; align-items: center; }
+  .profile h1 { font-size: 2rem; }
+  .profile .role { margin-top: 0.1rem; }
+  .contact { margin-top: 0.2rem; }
+  .summary { margin-top: 0.8rem; font-size: 1.05rem; line-height: 1.45; }
+
+  .cv-body {
+    display: grid;
+    grid-template-columns: 37% minmax(0, 1fr);
+    gap: 0 1.6rem;
+    align-items: start;
+  }
+  .cv-main, .cv-side { display: block; }
+
+  .cv-section { margin-top: 0.9rem; }
+  .cv-section > h2 { margin-bottom: 0.55rem; font-size: 0.8rem; color: #000; break-after: avoid; }
+  .entry { break-inside: avoid; }
+  .entry + .entry { margin-top: 0.75rem; }
+  .entries-compact .entry + .entry { margin-top: 0.45rem; }
+  .entry h3 { font-size: 1.05rem; }
+  .entry .org { margin-top: 0; }
+  .entry p:not(.org) { margin-top: 0.15rem; }
+  .skills > div + div { margin-top: 0.5rem; }
+}
